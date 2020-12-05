@@ -6,7 +6,7 @@ with open(input_file, "r") as file:
 
 
 # BFFFBBFRRR -> 1000110111 -> 567
-def seat_to_int(seat):
+def seat_to_int_classic(seat):
     binary_seat = ""
     for i in seat:
         if i in {"F", "L"}:
@@ -16,16 +16,17 @@ def seat_to_int(seat):
     return int(binary_seat, 2)
 
 
-# alternative one liner
 def seat_to_int(seat):
-    return int("".join(["0" if i in {"F", "L"} else "1" for i in seat]), 2)
+    rules = {"B": "1", "F": "0", "R": "1", "L": "0"}
+    binary_seat = [rules[i] for i in seat]
+    return int("".join(binary_seat), 2)
 
 
 max = 0
 seat_set = {0, 1}
 print
 for line in data:
-    current_line = seat_to_binary(line)
+    current_line = seat_to_int(line)
     seat_set.add(current_line)
     if current_line > max:
         max = current_line
