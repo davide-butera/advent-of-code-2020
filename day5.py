@@ -13,7 +13,7 @@ def seat_to_int(seat, rules):
 
 
 max = 0
-seat_set = {}
+seat_set = set()
 
 for line in data:
     current_line = seat_to_int(line, rules)
