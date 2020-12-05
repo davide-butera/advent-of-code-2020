@@ -6,7 +6,7 @@ with open(input_file, "r") as file:
 
 
 # BFFFBBFRRR -> 1000110111 -> 567
-def seat_to_binary(seat):
+def seat_to_int(seat):
     binary_seat = ""
     for i in seat:
         if i in {"F", "L"}:
@@ -17,7 +17,7 @@ def seat_to_binary(seat):
 
 
 # alternative one liner
-def seat_to_binary_2(seat):
+def seat_to_int(seat):
     return int("".join(["0" if i in {"F", "L"} else "1" for i in seat]), 2)
 
 
