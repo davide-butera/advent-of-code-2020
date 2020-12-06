@@ -2,18 +2,24 @@ import sys
 
 input_file = sys.argv[1]
 with open(input_file, "r") as file:
-    data = file.read()
-    data_2 = [d for d in data.split("\n\n")]
-    data_1 = [d.replace("\n", "") for d in data_2]
+    data = [d for d in file.read().split("\n\n")]
+    data_1 = [d.replace("\n", "") for d in data]
+    data_2 = [d.split("\n") for d in data]
 
 
 def part_1(data):
-    sum = 0
-    for d in data:
-        sum += len(set(d))
-    return sum
+    return sum([len(set(group)) for group in data])
 
 
+def part_2(data):
+    return sum([len(set.intersection(*[set(i) for i in group])) for group in data])
+
+
+print(part_1(data_1))
+print(part_2(data_2))
+
+
+"""
 def part_2(data_2):
     sum = 0
     for d in data_2:
@@ -23,7 +29,4 @@ def part_2(data_2):
             answer_set = answer_set.intersection(set(i))
         sum += len(answer_set)
     return sum
-
-
-print(part_1(data_1))
-print(part_2(data_2))
+"""
