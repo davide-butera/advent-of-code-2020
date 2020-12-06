@@ -12,6 +12,16 @@ def seat_to_int(seat, rules):
     return int("".join(binary_seat), 2)
 
 
+seat_list = [seat_to_int(line, rules) for line in data]
+print(max(seat_list))
+
+i = min(seat_list)
+while i in seat_list:
+    i += 1
+print(i)
+
+
+"""
 max = 0
 seat_set = set()
 
@@ -22,8 +32,4 @@ for line in data:
         max = current_line
 
 print(max)
-
-i = min(seat_set)
-while i in seat_set:
-    i += 1
-print(i)
+"""
