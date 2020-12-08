@@ -1,9 +1,6 @@
-import sys
+from load import load
 
-input_file = sys.argv[1]
-
-with open(input_file, "r") as file:
-    data = {int(number) for number in file}
+data = list(map(lambda l: int(l), load()))
 
 
 def part1():
@@ -19,4 +16,5 @@ def part2():
                 return i * j * (2020 - i - j)
 
 
-print(part1(), part2())
+print(part1())
+print(part2())

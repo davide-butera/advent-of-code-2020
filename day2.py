@@ -1,10 +1,7 @@
 import re
-import sys
+from load import load
 
-input_file = sys.argv[1]
-
-with open(input_file, "r") as file:
-    data = [line for line in file]
+data = load()
 
 regex = "([0-9]+)-([0-9]+) ([a-z]): ([a-z]+)"
 
@@ -33,4 +30,5 @@ for line in data:
     if rule_2(line):
         count_2 += 1
 
-print(count_1, count_2)
+print(count_1)
+print(count_2)

@@ -1,10 +1,6 @@
-import sys
+from load import load
 
-input_file = sys.argv[1]
-
-with open(input_file, "r") as file:
-    data = [line.strip() for line in file]
-
+data = load()
 height = len(data)
 width = len(data[0])
 

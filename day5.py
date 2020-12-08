@@ -1,8 +1,6 @@
-import sys
+from load import load
 
-input_file = sys.argv[1]
-with open(input_file, "r") as file:
-    data = [line.strip() for line in file]
+data = load()
 
 rules = {"L": "0", "R": "1", "F": "0", "B": "1"}
 

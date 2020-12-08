@@ -1,9 +1,6 @@
-import sys
+from load import load
 
-input_file = sys.argv[1]
-
-with open(input_file, "r") as file:
-    data = [line.strip() for line in file]
+data = load()
 data.append("")
 
 eye_colors = {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"}
