@@ -4,19 +4,19 @@ data = load()
 data = list(map(lambda x: int(x), data))
 
 
-def isSumInList(number, sublist):
+def isSumNotInList(number, sublist):
     for n in sublist:
         if number - n in sublist:
-            return True
+            return False
     return number
 
 
 def compute(data):
     preamble = 25
     for i in range(preamble, len(data)):
-        v = isSumInList(data[i], data[i - preamble : i])
-        if v != True:
-            return v
+        first_num = isSumNotInList(data[i], data[i - preamble : i])
+        if first_num:
+            return first_num
 
 
 def subArraySum(data, givensum):
