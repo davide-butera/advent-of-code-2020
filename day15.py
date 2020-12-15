@@ -10,10 +10,10 @@ def compute(numbers, end):
     for turn in range(len(numbers), end):
         last_spoken_number = number_record.get(last_number, -1)
         number_record[last_number] = turn
-        new_number = 0
+        current_number = 0
         if last_spoken_number > 0:
-            new_number = turn - last_spoken_number
-        last_number = new_number
+            current_number = turn - last_spoken_number
+        last_number = current_number
     return last_number
 
 
