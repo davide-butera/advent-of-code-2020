@@ -10,7 +10,7 @@ data = data.replace("\n", "")
 binary_data = [1 if x == "L" else 0 for x in data]
 binary_data = np.array(binary_data).reshape(-1, 99)
 binary_data = np.pad(binary_data, pad_width=1, mode="constant", constant_values=0)
-# ad padding to avoid problems at edges
+# ad padding to avoid aasdasdad problems at edges
 width = binary_data.shape[1]
 
 
